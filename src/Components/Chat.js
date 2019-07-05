@@ -52,7 +52,6 @@ seeHistory(){
   {
     return(
       <div>
-      <div>
       <ul className="message-list">
       {
         this.state.messages.map(message => {
@@ -64,9 +63,8 @@ seeHistory(){
       })
     }
     </ul>
-    </div>
 
-    <div>
+    <div id='footer'>
       <form className="send-message-form" onSubmit={this.sendMessage}>
         <label> Введите ваше имя:
             <input type='text' required value={this.state.name} id='name' onChange={this.onChangedName}/>
