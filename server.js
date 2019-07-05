@@ -35,7 +35,7 @@ sequelize
   sequelize.sync();
 let port = 8080;
 
-server.listen(port);
+server.listen(process.env.PORT || port);
 
 
 app.use(express.static('public'));
