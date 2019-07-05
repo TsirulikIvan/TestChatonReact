@@ -7,6 +7,7 @@
     "node": "v9.1.0"
   },
   "dependencies": {
+    "concurrently": "^4.1.1",
     "express": "^4.17.1",
     "pg": "^7.11.0",
     "react": "^16.8.6",
@@ -17,7 +18,7 @@
     "socket.io-client": "^2.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
@@ -37,5 +38,4 @@
       "last 1 safari version"
     ]
   }
-
 }
