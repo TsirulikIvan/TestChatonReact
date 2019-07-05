@@ -3,8 +3,9 @@ let app = express();
 let server = require('http').createServer(app);
 let io = require('socket.io')(server);
 let Sequelize = require('sequelize');
-let sequelize = new Sequelize("ChatDB","postgres", "STALKERs1",{
-  dialect : 'postgres'
+let sequelize = new Sequelize("dc317d0h61c540","jpemyduacpuljs", "e18511991221e18291f98b28bbeacecf8d0a257ace3ce9e2d77454cb0d938adf",{
+  dialect : 'postgres',
+  host: 'ec2-54-83-1-101.compute-1.amazonaws.com'
 });
 sequelize
   .authenticate()
