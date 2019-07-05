@@ -37,9 +37,7 @@ let port = 8080;
 
 server.listen(process.env.PORT || port);
 
-app.get('/', (res, req) =>{
-   req.sendFile('public/index.html')   
-})
+
 app.use(express.static('public'));
 
 io.on('connection', function(socket){
