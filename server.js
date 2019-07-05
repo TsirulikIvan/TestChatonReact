@@ -2,6 +2,7 @@ let express = require('express');
 let app = express();
 let server = require('http').createServer(app);
 let io = require('socket.io')(server);
+let path = require('path');
 let Sequelize = require('sequelize');
 let sequelize = new Sequelize("dc317d0h61c540","jpemyduacpuljs", "e18511991221e18291f98b28bbeacecf8d0a257ace3ce9e2d77454cb0d938adf",{
   dialect : 'postgres',
@@ -14,6 +15,12 @@ sequelize
   })
   .catch(err => {
     console.error('Unable to connect to the database:', err);
+  });
+
+  app.use(express.static(__dirname));
+  app.use(express.static(path.join(__dirname, 'build')));
+  app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
   });
 
   const Message = sequelize.define("messages", {
