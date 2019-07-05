@@ -16,6 +16,9 @@ sequelize
     console.error('Unable to connect to the database:', err);
   });
 
+  app.get('/', (req, res) =>{
+    res.sendFile('/src/index.html')
+  })
   const Message = sequelize.define("messages", {
     id: {
       type: Sequelize.INTEGER,
