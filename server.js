@@ -36,9 +36,7 @@ sequelize
 let port = 8080;
 
 server.listen(process.env.PORT || port);
-
-
-app.use(express.static('public'));
+console.log(process.env.PORT);
 
 io.on('connection', function(socket){
  console.log('user connected');
