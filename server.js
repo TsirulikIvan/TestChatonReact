@@ -17,7 +17,7 @@ sequelize
   });
 
   app.get('/', (req, res) =>{
-    res.sendFile('/public/index.html')
+    res.sendFile('index.html');
   })
   const Message = sequelize.define("messages", {
     id: {
